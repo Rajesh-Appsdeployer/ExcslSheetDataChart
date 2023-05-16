@@ -16,7 +16,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Install react:
 To install react on your machine, please run
-### npx create-react-app my-app
+### `npx create-react-app my-app`
 
 ### `npm start`
 
@@ -29,12 +29,12 @@ You can visit here for official documentation.
 
 ## Install Chart-js:
 
-### npm install react-chartjs-2 chart.js
+### `npm install react-chartjs-2 chart.js`
  
 
 ## Install Bootstrap:
 
-### npm i bootstrap
+### `npm i bootstrap`
 
 # Development:
 Folder Structure
@@ -43,7 +43,11 @@ Folder Structure
  
 
 You Need To first Choose file .xlsx and xls extenstion
-and 
+ ![Screenshot 2023-05-16 200617](https://github.com/Rajesh-Appsdeployer/ExcslSheetDataChart/assets/115983652/24075b6c-dd28-4942-9498-db32a0dea9ea)
+ 
+ after that you can visualize your data
+ ![Screenshot 2023-05-16 200933](https://github.com/Rajesh-Appsdeployer/ExcslSheetDataChart/assets/115983652/3e03c69c-e0d7-46d5-a35c-d87ab453cdd1)
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
@@ -98,3 +102,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
