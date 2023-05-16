@@ -1,0 +1,18 @@
+.Sidebar{
+     
+   
+}
+.chart_details{
+    border-right: 1px solid #adb5bd;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: left;
+    width: 200px;
+    height: 100vh;
+    
+}
+.chart_details h1{
+    margin-top: 20px ;
+}
