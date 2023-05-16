@@ -1,3 +1,13 @@
+# Excel Sheet Visualization using Chart in React js
+![Screenshot 2023-05-16 194305](https://github.com/Rajesh-Appsdeployer/ExcslSheetDataChart/assets/115983652/50181ac4-8c3a-47a4-980b-5c8571008d72)
+
+
+### HEy In this Project We are using ##npm xlsx  ### libary for fetch Excelsheet data and i used ## NPM Chart.js ,React-Chartjs-2 ### for For Excel Sheet data Visualization in Many form 
+### like : Line Chart 
+### Bar Chart
+### PieChart
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
