@@ -14,7 +14,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+## Install react:
+To install react on your machine, please run
+### npx create-react-app my-app
 
 ### `npm start`
 
@@ -23,7 +25,25 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+You can visit here for official documentation.
 
+## Install Chart-js:
+
+### npm install react-chartjs-2 chart.js
+ 
+
+## Install Bootstrap:
+
+### npm i bootstrap
+
+# Development:
+Folder Structure
+![Screenshot 2023-05-16 195935](https://github.com/Rajesh-Appsdeployer/ExcslSheetDataChart/assets/115983652/27ce88b4-4154-447a-a4df-7537df0daf3c)
+
+ 
+
+You Need To first Choose file .xlsx and xls extenstion
+and 
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
