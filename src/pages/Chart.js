@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
-// import "./Chart.css";
 import * as XLSX from "xlsx";
 import BarChart from  "../components/Barchart";
-import LineChart from "../components/Linechart";
-import PieChart from "../components/Pichart";
 import  {UserData } from "../components/Data/Data";
+import {  Form } from "react-bootstrap";
 
  const Chart =()=> {
+ // For  Reading Xlsx file
   const [data, setData] = useState([]);
-console.log("data",data)
+ 
   const handleFileUpload = (e) => {
     const reader = new FileReader();
     reader.readAsBinaryString(e.target.files[0]);
@@ -22,30 +21,43 @@ console.log("data",data)
       UserData.push(parsedData);
     };
   }
- 
- 
-console.log("label",data.map((data) => data.__EMPTY))
-console.log("data",data.map((data) => data.__EMPTY_1))
+
+  // take color from to color plate
+  const [backgroundColor, setBackgroundColor] = useState('');
+  const handleChangeBackgroundColor = (e) => {
+    setBackgroundColor(e.target.value);
+  };
+  // take index 
+  const [bcolor, setBcolor] = useState('');
+
+  // graph funtionality
+  
   const [userData, setUserData] = useState({
     labels:[],
     datasets: [
       {
         label: "Users Gained",
         data:[],
-        backgroundColor: [
-          "rgba(75,192,192,1)",
-          "#ecf0f1",
-          "#50AF95",
-          "#f3ba2f",
-          "#2a71d0",
-        ],
+        fill: true,
+       backgroundColor: [],
         borderColor: "black",
         borderWidth: 2,
       },
     ],
   });
+const color = ['blue','green','red']
+  // store changes colors in array
+  const [colors, setColors] = useState(color);
   useEffect(() => {
- 
+    const updatedColors = [...userData.datasets[0].backgroundColor];
+    updatedColors[bcolor] = backgroundColor;
+    setColors(updatedColors);
+    setBackgroundColor('')
+  }, [backgroundColor, bcolor]);
+
+   // graph funtionality on changes
+  useEffect(() => {
+    
     const updatedData = {
       ...userData,
       labels: data.map((data) => data.__EMPTY),
@@ -53,55 +65,46 @@ console.log("data",data.map((data) => data.__EMPTY_1))
         {
           ...userData.datasets[0],
           data: data.map((data) => data.__EMPTY_1),
+            backgroundColor: colors,
         },
       ],
     };
     setUserData(updatedData);
-  }, [data]);
+    
+  }, [data,backgroundColor]);
+
+
+  //  return
   return (
   <> 
   
     <div className="App">
     <h1>BarChart</h1>
     <p style={{marginBottom:"30px"}}>Excel Data Visualization using Chart</p>
-    
+     {/* for xlsx file */}
     <input 
     style={{marginBottom:"30px" , marginTop:"20px"}}
         type="file" 
         accept=".xlsx, .xls" 
         onChange={handleFileUpload} 
       />
-<div className="Table_check">
-      {data.length > 0 && (
-        <table className="table ">
-          <thead>
-            <tr>
-              {Object.keys(data[0]).map((key) => (
-                <th key={key}>{key}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((row, index) => (
-              <tr key={index}>
-                {Object.values(row).map((value, index) => (
-                  <td key={index}>{value}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
-      </div>
+      {/* for take color */}
+       <Form.Control
+          type="color"
+          value={backgroundColor}
+          onChange={handleChangeBackgroundColor}
+        />
+        {/*for  take index  */}
+        <input 
+    style={{marginBottom:"30px" }}
+        type="number"  
+        onChange={(e)=>{setBcolor(e.target.value)}} 
+      />
+ {/*  graph in bar form */}
       <div style={{ width: 700,boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px", padding:"20px" }}>
         <BarChart chartData={userData} />
       </div>
-      {/* <div style={{ width: 700 }}>
-        <LineChart chartData={userData} />
-      </div>
-      <div style={{ width: 700 }}>
-        <PieChart chartData={userData} />
-      </div> */}
+      
     </div>
     </>
   )

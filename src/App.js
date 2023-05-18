@@ -7,6 +7,11 @@ import './App.css';
  import Barchart from './pages/Chart'
 import LineChart from './components/Linechart';
 import PieChart from './components/Pichart';
+import Bubble from './components/Bubble';
+import Donut from './components/Donut';
+import AreaChart from './components/AreaChart';
+import RadarChart from './components/RadarChart';
+import ScatterChart from './components/ScatterChart';
 
 function App() {
   return (
@@ -19,6 +24,10 @@ function App() {
         <Route path="/" element={<Barchart/>}/>
         <Route path="/line" element={<LineChart/>}/>
         <Route path="/Pie" element={<PieChart/>}/>
+        <Route path="/AreaChart" element={<AreaChart/>}/>
+        <Route path="/Donut" element={<Donut/>}/>
+        <Route path="/Radar" element={<RadarChart/>}/>
+        
          </Routes>
          </div>
       </HashRouter>
