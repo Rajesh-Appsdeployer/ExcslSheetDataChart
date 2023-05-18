@@ -1,10 +1,22 @@
+# Excel Sheet Visualization using Chart in React js
+![Screenshot 2023-05-16 194305](https://github.com/Rajesh-Appsdeployer/ExcslSheetDataChart/assets/115983652/50181ac4-8c3a-47a4-980b-5c8571008d72)
+
+
+### HEy In this Project We are using ##npm xlsx  ### libary for fetch Excelsheet data and i used ## NPM Chart.js ,React-Chartjs-2 ### for For Excel Sheet data Visualization in Many form 
+### like : Line Chart 
+### Bar Chart
+### PieChart
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-In the project directory, you can run:
+## Install react:
+To install react on your machine, please run
+### `npx create-react-app my-app`
 
 ### `npm start`
 
@@ -13,6 +25,28 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+You can visit here for official documentation.
+
+## Install Chart-js:
+
+### `npm install react-chartjs-2 chart.js`
+ 
+
+## Install Bootstrap:
+
+### `npm i bootstrap`
+
+# Development:
+Folder Structure
+![Screenshot 2023-05-16 195935](https://github.com/Rajesh-Appsdeployer/ExcslSheetDataChart/assets/115983652/27ce88b4-4154-447a-a4df-7537df0daf3c)
+
+ 
+
+You Need To first Choose file .xlsx and xls extenstion
+ ![Screenshot 2023-05-16 200617](https://github.com/Rajesh-Appsdeployer/ExcslSheetDataChart/assets/115983652/24075b6c-dd28-4942-9498-db32a0dea9ea)
+ 
+ after that you can visualize your data
+ ![Screenshot 2023-05-16 200933](https://github.com/Rajesh-Appsdeployer/ExcslSheetDataChart/assets/115983652/3e03c69c-e0d7-46d5-a35c-d87ab453cdd1)
 
 ### `npm test`
 
@@ -68,3 +102,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
