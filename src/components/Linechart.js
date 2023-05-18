@@ -29,7 +29,24 @@ import "react-color-palette/lib/css/styles.css";
       UserData.push(parsedData);
     };
   }
+  // random color generater
+  const [coloradd, setColoradd] = useState([]);
+  const dynamicColors=()=> {
+    var r = Math.floor(Math.random() * 255);
+    var g = Math.floor(Math.random() * 255);
+    var b = Math.floor(Math.random() * 255);
+    return "rgba(" + r + "," + g + "," + b + ", 0.5)";
+}
 
+
+function poolColors(a) {
+  var pool = [];
+  for(var i = 0; i < a; i++) {
+      pool.push(dynamicColors());
+  }
+  console.log("kkkkk",pool)
+  return pool;
+}
   // take color from to color plate
   const [backgroundColor, setBackgroundColor] = useState('');
   const handleChangeBackgroundColor = (e) => {
@@ -39,7 +56,7 @@ import "react-color-palette/lib/css/styles.css";
   const [bcolor, setBcolor] = useState('');
 
   // graph funtionality
-  
+  const color = coloradd
   const [userData, setUserData] = useState({
     labels:[],
     datasets: [
@@ -47,15 +64,25 @@ import "react-color-palette/lib/css/styles.css";
         label: "Users Gained",
         data:[],
         fill: true,
-       backgroundColor: [],
+        backgroundColor: ["rgba(175,58,176, 0.5)","rgba(112,4,174, 0.5)","rgba(218,114,199, 0.5)", "rgba(165,177,57, 0.5)", "rgba(176,225,36, 0.5)",
+        "rgba(99,238,163, 0.5)", 
+        "rgba(86,68,29, 0.5)"],
+        pointColor: ["rgba(175,58,176, 0.5)","rgba(112,4,174, 0.5)","rgba(218,114,199, 0.5)", "rgba(165,177,57, 0.5)", "rgba(176,225,36, 0.5)",
+        "rgba(99,238,163, 0.5)", 
+        "rgba(86,68,29, 0.5)"],
+        fillColor:['blue'],
+        pointStrokeColor: ["rgba(175,58,176, 0.5)","rgba(112,4,174, 0.5)","rgba(218,114,199, 0.5)", "rgba(165,177,57, 0.5)", "rgba(176,225,36, 0.5)",
+        "rgba(99,238,163, 0.5)", 
+        "rgba(86,68,29, 0.5)"],
         borderColor: "black",
         borderWidth: 2,
+        pointRadius:10
       },
     ],
   });
-const color = ['blue','green','red']
+
   // store changes colors in array
-  const [colors, setColors] = useState(color);
+  const [colors, setColors] = useState(coloradd);
   useEffect(() => {
     const updatedColors = [...userData.datasets[0].backgroundColor];
     updatedColors[bcolor] = backgroundColor;
@@ -73,7 +100,9 @@ const color = ['blue','green','red']
         {
           ...userData.datasets[0],
           data: data.map((data) => data.__EMPTY_1),
-            backgroundColor: colors,
+          borderColor: colors,
+          pointStrokeColor:colors,
+           
         },
       ],
     };

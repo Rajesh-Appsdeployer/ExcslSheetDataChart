@@ -39,14 +39,16 @@ import {  Form } from "react-bootstrap";
         label: "Users Gained",
         data:[],
         fill: true,
-       backgroundColor: [],
+       backgroundColor: ["rgba(175,58,176, 0.5)","rgba(112,4,174, 0.5)","rgba(218,114,199, 0.5)", "rgba(165,177,57, 0.5)", "rgba(176,225,36, 0.5)",
+       "rgba(99,238,163, 0.5)", 
+       "rgba(86,68,29, 0.5)"],
         borderColor: "black",
         borderWidth: 2,
       },
     ],
   });
 const color = ['blue','green','red']
-  // store changes colors in array
+  // add  changes colors in array
   const [colors, setColors] = useState(color);
   useEffect(() => {
     const updatedColors = [...userData.datasets[0].backgroundColor];
