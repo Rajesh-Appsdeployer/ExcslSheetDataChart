@@ -29,7 +29,29 @@ import {  Form } from "react-bootstrap";
   };
   // take index 
   const [bcolor, setBcolor] = useState('');
+// random color generater
+const [coloradd, setColoradd] = useState([]);
+const dynamicColors=()=> {
+  var r = Math.floor(Math.random() * 255);
+  var g = Math.floor(Math.random() * 255);
+  var b = Math.floor(Math.random() * 255);
+  return "rgba(" + r + "," + g + "," + b + ", 0.5)";
+}
 
+var pool = [];
+function poolColors(){
+
+for(var i = 0; i <data.length; i++) {
+ console.log("hhh")
+    pool.push(dynamicColors());
+}
+console.log("kkkkk",pool)
+setColoradd(pool);
+}
+console.log("kkkkkff",coloradd)
+useEffect(()=>{
+ poolColors();
+},[data.length])
   // graph funtionality
   
   const [userData, setUserData] = useState({
